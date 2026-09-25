@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>A Letter For You 📁</title>
+  <meta name="description" content="A private letter inside a folder, with Jin DC - Totoong Tayo.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📁</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Caveat, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Light Effects & Canvas for Floating Particles -->
+  <div class="ambient-glow glow-top"></div>
+  <div class="ambient-glow glow-bottom"></div>
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Floating Audio Player Bar (Becomes active when folder is opened) -->
+  <header class="music-pill" id="music-pill">
+    <div class="music-disc-wrapper" id="music-disc">
+      <div class="vinyl-disc">
+        <div class="vinyl-center"></div>
+      </div>
+      <div class="eq-bars" id="eq-bars">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+    <div class="music-info">
+      <span class="song-title">Totoong Tayo</span>
+      <span class="song-artist">Jin DC</span>
+    </div>
+    <button class="music-btn" id="play-pause-btn" aria-label="Toggle playback" title="Play / Pause">
+      <svg class="icon-pause" viewBox="0 0 24 24" width="16" height="16">
+        <rect x="6" y="4" width="4" height="16" rx="1.5" fill="currentColor"/>
+        <rect x="14" y="4" width="4" height="16" rx="1.5" fill="currentColor"/>
+      </svg>
+      <svg class="icon-play" viewBox="0 0 24 24" width="16" height="16">
+        <path d="M8 5v14l11-7z" fill="currentColor"/>
+      </svg>
+    </button>
+  </header>
+
+  <!-- Main Perspective Scene -->
+  <main class="scene" id="main-scene">
+
+    <!-- Folder System -->
+    <div class="folder-wrapper" id="folder-wrapper" role="button" tabindex="0" aria-label="Open Letter Folder">
+
+      <!-- THE FOLDER CONTAINER -->
+      <div class="folder" id="folder">
+
+        <!-- Folder Back Pocket -->
+        <div class="folder-back">
+          <!-- Folder Tab -->
+          <div class="folder-tab">
+            <span class="tab-label">FOR BABY 📁</span>
+            <span class="tab-sub">PRIVATE & CONFIDENTIAL</span>
+          </div>
+        </div>
+
+        <!-- The Letter (Inside the folder, slides out upon open) -->
+        <article class="letter-sheet" id="letter-sheet" aria-hidden="true">
+          <!-- Subtle Paper Creases & Stamp Details -->
+          <div class="paper-texture"></div>
+          <div class="paper-crease horizontal"></div>
+          
+          <div class="letter-header">
+            <div class="stamp-container">
+              <div class="postage-stamp">
+                <span>PAR AVION</span>
+                <span class="stamp-heart">🤍</span>
+                <small>SPECIAL DELIVERY</small>
+              </div>
+            </div>
+            <div class="letter-date" id="letter-date">
+              <span class="tag-confidential">FOR YOUR EYES ONLY</span>
+              <span class="date-text">To my favorite person</span>
+            </div>
+          </div>
+
+          <div class="letter-divider"></div>
+
+          <!-- THE MESSAGE CONTENT -->
+          <div class="letter-body">
+            <p class="letter-opening">Baby,</p>
+
+            <p>i saw this repost of yours indicating about that one partner that shows up and notices every little things when you're not okay. I'll be frank to you. I notice almost everything baby. However not at all times. There are times that I am indeed manhid. But, sa time goes by, minsanan mo nang hindi tinanggap mga sinasabi ko kaya minsan, nag dadalwang isip ako kung magsesend ba ako ng kahit maliit lng? orhuwag ko nalang ipaalam sayo in chat but show it to you by actions? tbh kasi baby, sawa na din ako sa mga sorry ko ih. I feel it and know it na kaya mo nagawang itaboy minsan mga nisesend ko kasi nga paulit ulit nalang.</p>
+
+            <p>But looking back baby, I still remmeeber this day na napaiyak kita. nag cry ikaw. we were just starting that time. you reposted aboutsomething indicating that you're not okay. then I gave you a realy really long message. there, you told me na i made you cry. that you were not expecting me to n0otice those little things. I still remember that w=very well baby. that's why, napapaisip0 ako now.</p>
+
+            <p>We both crave for my old version. for the old version of us where we';re both happy. we're both healthy. so why not ibring up ko nalang fully? Nasabi ko na sayo mahal na ibabalik ko ung dating pagttrato ko sayo. yeah, binabalik ko but I feel like im not giving it all. But baby, where's the harm naman diba? evenif ibalik ko lahat yon, it wil make us better.</p>
+
+            <p>I'm sorry sa mga oras na parang hindi ko napapansin or sa mga oras na di ko man lang mapansin ung narramdaman mo :&lt; but baby, I want you to remember this again, you matter to me,. no matter what the situationship, kahit ano pa man ang nangyayari saatin, you'll always matter to me . From now on, I'lll do my best to give you the assurance tht you need. if I notice thatr you just need someone to check up on you,. i'll be there na hmkie?</p>
+
+            <p>ibabalik natin yung dating tayo. let's stive for the better and healthy relationship hmkie ? ibabalik natin ung mga oras na kung saan masaya tayong parehas. na kung saan, pure ung tawanan natin. walang halong sakit. walang halong pagtatago. I really crave for those moments of us. I miss the old us. The Old me.</p>
+
+            <p>Baby, I'm sorry for changing like this. for turning out to be like this. tbh, takot din ako nung una ih. na baka sa una lng ako maging ganon. ung mga flowers, iniiisip ko, baka sa una ko lng to magawa :&lt; and there it is. pinipilit ko naman ibalik mahal. kaya don't worry ikaw ha? ibabalik ko yung dating ako po. asahan mo sakin yan ha? again, sorry mahal, nagbago ako sa ganitong pamamaraan. but don't worrry ikaw. we'll be better tdin.</p>
+
+            <p>babawi tayo. ibabawi ko relasyton natin. illalaban ko relasyon natin hmkie? just keep on holding to me, baby. I'll make sure that you're loved. i'll make you secure with m,e. I'll make you say yes. Someday.</p>
+
+            <p class="letter-closing">Just please, wag iakw mapagod sakin mahalin ha ? :( pag napagod ka, di ko na alam ano mangyayari sakin :( mahal na mahal kita sobra. I an't live my life without you. I love you very much, baby. Too much. Always will.</p>
+          </div>
+
+          <div class="letter-footer">
+            <div class="heart-signature">
+              <span>Always yours,</span>
+              <span class="sig-name">Mahal ♡</span>
+            </div>
+
+            <button class="close-folder-btn" id="close-folder-btn" type="button">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+              <span>Fold & Close</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Folder Front Flap (Opens forward/down on click) -->
+        <div class="folder-front" id="folder-front">
+          <div class="folder-front-inner">
+            <!-- Decorative Washi Tape -->
+            <div class="washi-tape washi-top-right"></div>
+            <div class="washi-tape washi-bottom-left"></div>
+
+            <!-- Paper Clip Accent -->
+            <div class="paper-clip"></div>
+
+            <!-- Folder Cover Stamp & Seal -->
+            <div class="folder-stamp-box">
+              <span class="stamp-sub">STRICTLY CONFIDENTIAL</span>
+              <h1 class="folder-title">A Letter For You</h1>
+              <p class="folder-subtitle">From someone who loves you more than words can tell</p>
+            </div>
+
+            <!-- Aesthetic Wax Seal / Button to open -->
+            <div class="seal-container">
+              <div class="wax-seal">
+                <span class="seal-icon">♡</span>
+              </div>
+              <div class="open-instruction">
+                <span class="click-tag">CLICK TO OPEN</span>
+                <span class="audio-hint">♫ Plays "Jin DC - Totoong Tayo"</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div> <!-- /folder -->
+
+    </div> <!-- /folder-wrapper -->
+
+  </main>
+
+  <!-- HTML5 Audio Element with Multiple Formats (WebM, M4A) -->
+  <audio id="local-audio" preload="auto">
+    <source src="audio/totoong_tayo.webm" type="audio/webm">
+    <source src="audio/totoong_tayo.m4a" type="audio/mp4">
+    <source src="audio/totoong_tayo.mp3" type="audio/mpeg">
+    <source src="audios/totoong_tayo.webm" type="audio/webm">
+    <source src="audios/totoong_tayo.m4a" type="audio/mp4">
+    <source src="audios/totoong_tayo.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Hidden Container for YouTube IFrame Fallback -->
+  <div id="yt-player-container" style="display:none; position:absolute; width:1px; height:1px; opacity:0; pointer-events:none;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
