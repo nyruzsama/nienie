@@ -408,4 +408,71 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
     }
   }
+
+  // =========================================================================
+  // INTERACTIVE SWEET REMINDER FOR JAYZEL
+  // =========================================================================
+  const sweetHugBtn = document.getElementById('sweet-hug-btn');
+  const sweetToast = document.getElementById('sweet-toast');
+
+  const sweetQuotes = [
+    "Para mong pinapakita sakin na may star ka ✨",
+    "You're sooo so gorgeous, Jayzel! Don't you ever forget that ♡",
+    "Uhibukkii Ya Albi! (I love you, my heart!)",
+    "I'm more than proud of you, my sweet girl. You did really really well 🤍",
+    "I am soo so lucky to be your partner. To have someone as beautiful as you are.",
+    "I will love you for eternity, Jayzel. I'm sure of it. ♾️",
+    "Here we are, still doing our very best to bring out our best 🌸",
+    "Nung nasa simbahan tayo, hanggang 5pm... napapatunganga ako sayo ♡"
+  ];
+
+  let quoteIndex = 0;
+
+  if (sweetHugBtn && sweetToast) {
+    sweetHugBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      
+      sweetToast.classList.remove('is-visible');
+      
+      setTimeout(() => {
+        sweetToast.textContent = sweetQuotes[quoteIndex % sweetQuotes.length];
+        sweetToast.classList.add('is-visible');
+        quoteIndex++;
+      }, 150);
+
+      // Create a burst of hearts & stars at button position
+      const rect = sweetHugBtn.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      for (let i = 0; i < 12; i++) {
+        const item = document.createElement('div');
+        const icons = ['♡', '✨', '🤍', '⭐'];
+        item.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        item.style.position = 'fixed';
+        item.style.left = `${centerX}px`;
+        item.style.top = `${centerY}px`;
+        item.style.fontSize = `${Math.random() * 14 + 14}px`;
+        item.style.color = Math.random() > 0.5 ? '#c97a7e' : '#d4a373';
+        item.style.pointerEvents = 'none';
+        item.style.zIndex = '999';
+        item.style.transition = 'all 1.2s cubic-bezier(0.1, 0.8, 0.2, 1)';
+        document.body.appendChild(item);
+
+        const angle = Math.random() * Math.PI * 2;
+        const distance = Math.random() * 90 + 40;
+        const destX = Math.cos(angle) * distance;
+        const destY = Math.sin(angle) * distance - 35;
+
+        requestAnimationFrame(() => {
+          item.style.transform = `translate(${destX}px, ${destY}px) scale(0)`;
+          item.style.opacity = '0';
+        });
+
+        setTimeout(() => {
+          item.remove();
+        }, 1300);
+      }
+    });
+  }
 });
