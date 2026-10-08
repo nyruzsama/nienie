@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="goldCorner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fae19c" />
+      <stop offset="40%" stop-color="#d4af37" />
+      <stop offset="80%" stop-color="#aa771c" />
+      <stop offset="100%" stop-color="#6a4400" />
+    </linearGradient>
+    <radialGradient id="bluePetal" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#93c5fd" />
+      <stop offset="60%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </radialGradient>
+  </defs>
+
+  <!-- Ornate Corner Filigree Lines -->
+  <path d="M6 6 L70 6 C40 6, 20 20, 16 50 C14 65, 12 85, 6 100 L6 6 Z" fill="none" stroke="url(#goldCorner)" stroke-width="2.5" />
+  <path d="M12 12 L50 12 C32 12, 22 22, 18 42 C16 55, 14 70, 12 80" fill="none" stroke="url(#goldCorner)" stroke-width="1.2" opacity="0.8" />
+  
+  <!-- Flourish spirals -->
+  <path d="M18 18 C30 25, 40 38, 38 50 C36 60, 26 62, 22 55 C18 48, 26 40, 32 44" fill="none" stroke="url(#goldCorner)" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M6 6 L26 26" stroke="url(#goldCorner)" stroke-width="2" />
+  
+  <!-- Tiny Blue Flower Bouquet at Corner -->
+  <g transform="translate(22, 22)">
+    <!-- Flower Center -->
+    <circle cx="12" cy="12" r="3" fill="#fef08a" />
+    <!-- Petals -->
+    <circle cx="12" cy="6" r="4.5" fill="url(#bluePetal)" opacity="0.9" />
+    <circle cx="17" cy="9" r="4.5" fill="url(#bluePetal)" opacity="0.9" />
+    <circle cx="16" cy="16" r="4.5" fill="url(#bluePetal)" opacity="0.9" />
+    <circle cx="8" cy="16" r="4.5" fill="url(#bluePetal)" opacity="0.9" />
+    <circle cx="7" cy="9" r="4.5" fill="url(#bluePetal)" opacity="0.9" />
+    <!-- Gold leaf -->
+    <path d="M22 6 C28 8, 30 14, 26 18 C22 18, 20 12, 22 6 Z" fill="url(#goldCorner)" opacity="0.75" />
+  </g>
+</svg>

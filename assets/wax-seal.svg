@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <radialGradient id="waxGrad" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#3a86ff" />
+      <stop offset="25%" stop-color="#1d4ed8" />
+      <stop offset="65%" stop-color="#1e3a8a" />
+      <stop offset="90%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    <radialGradient id="goldRim" cx="30%" cy="30%" r="75%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="85%" stop-color="#996515" />
+      <stop offset="100%" stop-color="#583101" />
+    </radialGradient>
+    <filter id="waxShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.45" />
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+    <filter id="emboss" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="blur" />
+      <feOffset in="blur" dx="-1" dy="-1.5" result="offset1" />
+      <feOffset in="blur" dx="1.5" dy="2" result="offset2" />
+      <feComposite in="offset1" in2="offset2" operator="out" result="shadow" />
+      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.5 0" in="shadow" result="highlight" />
+      <feMerge>
+        <feMergeNode in="SourceGraphic" />
+        <feMergeNode in="highlight" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <g filter="url(#waxShadow)">
+    <!-- Organic wax droplet edge -->
+    <path d="M80 6 
+      C100 5, 115 12, 128 24 
+      C140 37, 155 52, 154 74 
+      C153 95, 145 112, 134 126 
+      C121 141, 102 153, 80 154 
+      C58 155, 39 143, 26 130 
+      C12 116, 5 98, 6 78 
+      C7 56, 18 38, 32 25 
+      C46 11, 62 7, 80 6 Z" 
+      fill="url(#waxGrad)" />
+    
+    <!-- Outer wax ridge ring -->
+    <circle cx="80" cy="80" r="54" fill="none" stroke="rgba(59, 130, 246, 0.4)" stroke-width="4" />
+    <circle cx="80" cy="80" r="48" fill="none" stroke="url(#goldRim)" stroke-width="2" stroke-dasharray="2 3" opacity="0.85" />
+
+    <!-- Inner Seal Bed -->
+    <circle cx="80" cy="80" r="44" fill="#172554" />
+
+    <!-- Embossed Initial "K" & Laurel Crown -->
+    <g filter="url(#emboss)">
+      <!-- Laurel branches -->
+      <path d="M50 78 C48 64, 55 52, 65 44 M52 66 C46 62, 44 55, 48 49 M56 55 C52 49, 53 43, 60 41" 
+        stroke="url(#goldRim)" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      <path d="M110 78 C112 64, 105 52, 95 44 M108 66 C114 62, 116 55, 112 49 M104 55 C108 49, 107 43, 100 41" 
+        stroke="url(#goldRim)" stroke-width="1.8" fill="none" stroke-linecap="round" />
+      
+      <!-- Small Star at top -->
+      <polygon points="80,38 82,43 87,44 83,47 84,52 80,49 76,52 77,47 73,44 78,43" fill="url(#goldRim)" />
+
+      <!-- Letter K Monogram -->
+      <text x="80" y="98" 
+        font-family="'Playfair Display', 'Cormorant Garamond', 'Georgia', serif" 
+        font-size="44" 
+        font-weight="bold" 
+        font-style="italic" 
+        text-anchor="middle" 
+        fill="url(#goldRim)">K</text>
+      
+      <!-- Small crown/heart below K -->
+      <path d="M72 108 C72 104, 76 103, 80 106 C84 103, 88 104, 88 108 C88 112, 80 117, 80 117 C80 117, 72 112, 72 108 Z" 
+        fill="url(#goldRim)" opacity="0.9" />
+    </g>
+
+    <!-- Glossy wax reflection highlight -->
+    <ellipse cx="62" cy="45" rx="20" ry="8" transform="rotate(-30 62 45)" fill="#ffffff" opacity="0.18" />
+  </g>
+</svg>
