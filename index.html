@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Happy Birthday, Kaye 💙 | A Letter For You</title>
+  <meta name="description" content="A private birthday love letter and 3D singing pop-up surprise for Kaye.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💌</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond, Playfair Display, Caveat, Dancing Script, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cake.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       DESK SURFACE & AMBIENT ATMOSPHERE
+       ======================================================================== -->
+  <div class="desk-surface">
+    <!-- Candlelight Halos -->
+    <div class="ambient-glow glow-top-left"></div>
+    <div class="ambient-glow glow-top-right"></div>
+    <div class="ambient-glow glow-bottom-right"></div>
+
+    <!-- Blue Peony & Gold Ribbon Borders (Image 1 & 2) -->
+    <div class="floral-border-top"></div>
+    <div class="floral-border-bottom"></div>
+
+    <!-- Starlight & Floating Blue Petals Canvas -->
+    <canvas id="particles-canvas"></canvas>
+  </div>
+
+  <!-- Background Music Audio Elements -->
+  <audio id="bg-music-audio" loop preload="auto" src="audio/music.mp3"></audio>
+  <audio id="birthday-song-audio" preload="auto" src="audio/birthday.mp3"></audio>
+
+  <!-- ========================================================================
+       FLOATING MUSIC PILL BAR (Image 2 Top)
+       ======================================================================== -->
+  <header class="music-pill" id="music-pill" role="region" aria-label="Music Player">
+    <div class="music-disc-wrapper">
+      <div class="vinyl-disc">
+        <div class="vinyl-center"></div>
+      </div>
+      <div class="eq-bars">
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+        <span class="eq-bar"></span>
+      </div>
+    </div>
+    <div class="music-info">
+      <span class="song-title">Totoong Tayo</span>
+      <span class="song-artist">Playing For Kaye 💙</span>
+    </div>
+    <button class="music-btn" id="play-pause-btn" aria-label="Toggle music playback" title="Play / Pause">
+      <svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14">
+        <rect x="6" y="4" width="4" height="16" rx="1.5" />
+        <rect x="14" y="4" width="4" height="16" rx="1.5" />
+      </svg>
+      <svg class="icon-play" viewBox="0 0 24 24" width="14" height="14">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </button>
+  </header>
+
+  <!-- ========================================================================
+       FLOATING PHOTO GALAXY LAYER (~50 IMAGES)
+       ======================================================================== -->
+  <div class="floating-photos-container" id="floating-photos-container"></div>
+
+  <!-- ========================================================================
+       MAIN SCENE STAGE (Mobile & Desktop Responsive)
+       ======================================================================== -->
+  <main class="main-stage">
+    <div class="stage-frame">
+
+      <!-- --------------------------------------------------------------------
+           SCENE 1: COVER VIEW (Image 1 Match)
+           -------------------------------------------------------------------- -->
+      <section class="cover-scene" id="cover-scene" aria-label="Letter Cover">
+        <div class="cover-header">
+          <div class="cover-subtitle">HAPPY BIRTHDAY,</div>
+          <h1 class="cover-title-name">
+            Kaye
+            <img src="assets/filigree-corner.svg" class="floating-petal" alt="" aria-hidden="true">
+          </h1>
+        </div>
+
+        <!-- The Wax Sealed Envelope -->
+        <div class="envelope-box" id="envelope-box" role="button" tabindex="0" aria-label="Open Birthday Letter">
+          <div class="envelope-folds"></div>
+          <div class="wax-seal-wrapper" id="wax-seal">
+            <img src="assets/wax-seal.svg" class="wax-seal-img" alt="Royal Blue Wax Seal for Kaye">
+          </div>
+        </div>
+
+        <div class="cover-signoff">
+          with love, Someone special
+          <span style="font-size: 20px; color: #60a5fa;">🌸</span>
+        </div>
+
+        <button class="btn-open-letter" id="btn-open-letter">
+          Open the letter
+        </button>
+      </section>
+
+      <!-- --------------------------------------------------------------------
+           SCENE 2: UNROLLED LETTER VIEW (Image 2 Match)
+           -------------------------------------------------------------------- -->
+      <section class="letter-scene" id="letter-scene" aria-label="Birthday Letter Content">
+        <article class="letter-parchment">
+          <!-- Ornate Filigree Corners -->
+          <img src="assets/filigree-corner.svg" class="parchment-corner corner-tl" alt="" aria-hidden="true">
+          <img src="assets/filigree-corner.svg" class="parchment-corner corner-tr" alt="" aria-hidden="true">
+          <img src="assets/filigree-corner.svg" class="parchment-corner corner-bl" alt="" aria-hidden="true">
+          <img src="assets/filigree-corner.svg" class="parchment-corner corner-br" alt="" aria-hidden="true">
+
+          <!-- Header -->
+          <header class="parchment-header">
+            <span class="header-badge">A BIRTHDAY LETTER FOR YOU</span>
+            <h2 class="header-title">Happy Birthday, Kaye</h2>
+            <div class="header-date">Celebrating The Most Wonderful Person In My Life</div>
+          </header>
+
+          <!-- Letter Pages Carousel (7 Pages - Darwin's Letter to Kaye) -->
+          <div class="letter-pages-container">
+
+            <!-- PAGE 1: 17th Birthday Greeting -->
+            <div class="letter-page active" data-page="0">
+              <h3 class="salutation">Happiest 17th Birthday, Babyy! :&gt;</h3>
+              <p class="letter-text">
+                Today is the day that my special one, you, was born. You may say that it's just a birthday, that you don't want to celebrate it, but let me. I want to celebrate your birthday and make it somewhat special for you.
+              </p>
+              <p class="letter-text">
+                Baby, you mean so much to me. I want you to realize that having you come into my life is the greatest gift that God has blessed me with.
+              </p>
+            </div>
+
+            <!-- PAGE 2: The 16th Birthday Memory -->
+            <div class="letter-page" data-page="1">
+              <h3 class="salutation">My Little Cutie Quine</h3>
+              <p class="letter-text">
+                Do you still remember nung una? Nung 16th birthday mo. I gave you out a cake but a DIY one hwuaha. You kept insisting that you don't want to celebrate your birthday but deep inside, you badly wanna blow a candle. You badly want to be greeted.
+              </p>
+              <p class="letter-text">
+                After all, you're just like someone who wants to celebrate it. You're my little cutie Quine. That's why, today, I want to once again greet you, Happiest 17th Birthday, mylove. I would never get tired of saying that to you no matter how many times you crave for it.
+              </p>
+            </div>
+
+            <!-- PAGE 3: My Safeplace -->
+            <div class="letter-page" data-page="2">
+              <h3 class="salutation">Thank You For Staying</h3>
+              <p class="letter-text">
+                Baby, I know I'm not the easiest person to love. I know that I always mess things up. However, thank you. Thank you so much for staying with me. Through my immature, lowest moments, I'm more than grateful to have you by my side para pagsabihan mo ako. Tauhan mo ako. You've shaped almost everything about me.
+              </p>
+              <p class="letter-text">
+                Thank you for being my <em>safeplace</em>. Even when things are rough between us, I want you to always know that I will never ever leave you. hmkie? I would forever be grateful for having someone as beautiful, gorgeous, matured, caring, kind, and lastly, loving woman like you.
+              </p>
+            </div>
+
+            <!-- PAGE 4: Always Choosing Us -->
+            <div class="letter-page" data-page="3">
+              <h3 class="salutation">Choosing Us, Always</h3>
+              <p class="letter-text">
+                No matter how many times life gets difficult, I’ll always choose you, love you, and find my way back to you. As I've said, I know that sometimes I mess things up. That I'm hard to love. Baby, I don’t promise and I can't promise that I’ll be perfect, but I promise that I’ll always be yours and that I’ll keep choosing us no matter what our situation is.
+              </p>
+              <p class="letter-text">
+                I'm sorry, I get to hurt you many times. I get to make you cry almost everytime. For not learning in our previous disagreements and misunderstanding. But baby, I want you to know this: I've been doing my best, trying my very best to give you the love that you crave. I will be better for us. I will give it all my best so that you can still keep on calling me your "safeplace". I will be better, mylove. For you, for us, for the future us.
+              </p>
+            </div>
+
+            <!-- PAGE 5: Proud of You -->
+            <div class="letter-page" data-page="4">
+              <h3 class="salutation">Proud Of Your Light</h3>
+              <p class="letter-text">
+                I also want you to know that I'm proud of you. Really really proud of your progress. If only you could be in my place, you would know and feel how much I am proud and happy for you.
+              </p>
+              <p class="letter-text">
+                Do you remember those times when ikaw naman ung nagtuturo sakin? God knows how happy I am deep inside to have you lecture me about that question. Having seen you come to me right after class, I really appreciate it that you badly want to share your knowledge with me as fast as possible.
+              </p>
+              <p class="letter-text">
+                I'm really really proud of you. I can absolutely see that you're doing your best, you're giving it all you own. Having seen you like that lights me more up to keep on doing better also. I'm so proud of what we've become, baby. I hope that we still do our best to give it everything we have. I hope that light of yours continues to grow even more. Again, remember baby, you'll always have me. Always, in all ways.
+              </p>
+            </div>
+
+            <!-- PAGE 6: My Wish & Future -->
+            <div class="letter-page" data-page="5">
+              <h3 class="salutation">My Wish For You</h3>
+              <p class="letter-text">
+                As you blow out your candles this year, I wish that all your hopes, dreams, and quiet prayers to come true, baby. May this new year of your life be filled with endless peace, laughter, and unforgettable blessings. May the world be easy on you, baby. I will continue to support you, be by your side, to stand with you in every hardship, and be your loving partner always, no matter what.
+              </p>
+              <p class="letter-text">
+                I don't know what the future holds for us, however, through all the hardships that we are bound to face, I will always be by your side. I want you to be part of my future. I see you in my future. I want to spend this life with you in it. I want to exhaust this life to grow old with you. Let us create a wonderful journey. I will always choose you through your very lowest.
+              </p>
+            </div>
+
+            <!-- PAGE 7: My Forever Promise -->
+            <div class="letter-page" data-page="6">
+              <h3 class="salutation">My Favorite Blessing</h3>
+              <p class="letter-text">
+                You're my favorite person I want to talk with. In fact, you're my favorite in everything. You're someone I can call <em>home</em> as you never fail to make me feel safe and bring me joy especially on the days that I'm down.
+              </p>
+              <p class="letter-text">
+                Today, as we celebrate yet another birthday of yours, I want you to know that this will not be the last. No matter how many times you claim that you don't want to celebrate your birthday, know this: I will make it special for you. A promise to you, mylove. I will always celebrate every birthday that will pass. I want to remind you again that I will definitely marry you, my girl. That's a promise.
+              </p>
+              <p class="letter-text">
+                You are, and always will be, my favorite blessing, my favorite person, my favorite little Quine. I love you more than this world can explain. More than words can express. I promise to love you, now, tomorrow, everyday, in every lifetime, forever.
+              </p>
+              <p class="letter-text" style="font-style: italic; color: #1e3a8a; font-weight: 700; text-align: center; margin-top: 14px;">
+                Uhibukki, Ya Albi.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Page Indicator Dots (7 Pages) -->
+          <div class="page-indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </article>
+
+        <!-- Docked Bottom Navigation Bar (Image 2 Bottom Bar) -->
+        <nav class="bottom-dock" aria-label="Letter Navigation">
+          <button class="dock-btn-round" id="dock-btn-prev" aria-label="Previous Page" title="Previous Page">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+            </svg>
+          </button>
+
+          <button class="dock-btn-round" id="dock-btn-grid" aria-label="View Photo Memories" title="Open 50 Photo Memories Album">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M4 4h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 10h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4zM4 16h4v4H4zm6 0h4v4h-4zm6 0h4v4h-4z"/>
+            </svg>
+          </button>
+
+          <button class="dock-btn-next" id="dock-btn-next" aria-label="Next Page">
+            <div class="next-meta">
+              <span class="next-label">NEXT</span>
+              <span class="next-title" id="next-btn-title">Little Quine ➔</span>
+            </div>
+            <svg viewBox="0 0 24 24" width="18" height="18">
+              <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+            </svg>
+          </button>
+        </nav>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       SCENE 3: 3D POP-UP SINGING BIRTHDAY CAKE CARD (Image 3 Match)
+       ======================================================================== -->
+  <div class="cake-scene-container" id="cake-scene-container" role="dialog" aria-modal="true" aria-label="3D Pop-Up Birthday Cake">
+    <div class="cake-ambient-glow"></div>
+
+    <!-- Top Action Bar -->
+    <div class="cake-top-bar">
+      <button class="cake-back-btn" id="cake-back-btn">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back to Letter
+      </button>
+      <div class="cake-title-pill">Happy Birthday, Kaye</div>
+    </div>
+
+    <!-- 3D Card Stage -->
+    <div class="card-stage">
+      <div class="popup-card is-closed" id="popup-card">
+
+        <!-- 1. FRONT COVER (Closed Mode) -->
+        <div class="card-front-cover">
+          <div class="cover-filigree-frame"></div>
+          <svg class="cover-corner-star tl" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+          <svg class="cover-corner-star tr" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+          <svg class="cover-corner-star bl" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+          <svg class="cover-corner-star br" viewBox="0 0 24 24"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+
+          <div class="cover-icon-cake">🎂</div>
+          <div class="cover-title">A SPECIAL BIRTHDAY SURPRISE</div>
+          <div class="cover-name">For Kaye</div>
+          <div class="cover-open-tag">
+            <span>Tap To Open Card</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+              <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 2. BACK CARD FACE (Upright Back with radial light rays & cutouts) -->
+        <div class="card-back-panel">
+          <div class="back-panel-light-rays"></div>
+
+          <div class="back-panel-laser-art">
+            <!-- Laser Cut Fireworks SVG -->
+            <svg class="firework-cutout" viewBox="0 0 100 100">
+              <path d="M50 20 L50 35 M50 65 L50 80 M20 50 L35 50 M65 50 L80 50 M28 28 L38 38 M62 62 L72 72 M72 28 L62 38 M28 72 L38 62" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="50" cy="50" r="3" fill="#b45309"/>
+            </svg>
+            <!-- Laser Cut Party Hat SVG -->
+            <svg class="party-hat-cutout" viewBox="0 0 60 60">
+              <polygon points="30,5 10,50 50,50" fill="none" stroke="#b45309" stroke-width="2"/>
+              <circle cx="30" cy="5" r="3" fill="#b45309"/>
+              <path d="M15 40 Q 30 35 45 40" stroke="#b45309" stroke-width="1.5" fill="none"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- 3. BOTTOM CARD BASE (Flat base with inscribed greetings) -->
+        <div class="card-base-panel">
+          <div class="base-gold-pocket">
+            <svg class="base-pocket-bunting" viewBox="0 0 200 20">
+              <path d="M10 2 Q 50 15 100 2 Q 150 15 190 2" stroke-width="1"/>
+              <polygon points="30,8 40,16 50,8" fill="#d97706"/>
+              <polygon points="70,10 80,18 90,10" fill="#d97706"/>
+              <polygon points="110,10 120,18 130,10" fill="#d97706"/>
+              <polygon points="150,8 160,16 170,8" fill="#d97706"/>
+            </svg>
+            <div class="base-pocket-text">Make a Wish, Birthday Girl ✨</div>
+            <div class="base-pocket-sub">Happy Birthday, Kaye • With All My Love</div>
+          </div>
+        </div>
+
+        <!-- 4. THE 3-TIER HONEYCOMB PAPER CAKE POP-UP -->
+        <div class="cake-3d-wrapper">
+          <!-- Warm Glowing Internal LED light -->
+          <div class="cake-internal-light"></div>
+
+          <!-- TIER 1 (Bottom): "B I R T H D A Y" -->
+          <div class="cake-tier tier-1">
+            <div class="honeycomb-accordion">
+              <div class="honeycomb-scallop-top"></div>
+              <div class="honeycomb-scallop-bottom"></div>
+            </div>
+            <div class="tier-cutout-banner">
+              <span class="cutout-letter">B</span>
+              <span class="cutout-letter">I</span>
+              <span class="cutout-letter">R</span>
+              <span class="cutout-letter">T</span>
+              <span class="cutout-letter">H</span>
+              <span class="cutout-letter">D</span>
+              <span class="cutout-letter">A</span>
+              <span class="cutout-letter">Y</span>
+            </div>
+          </div>
+
+          <!-- TIER 2 (Middle): "H A P P Y" -->
+          <div class="cake-tier tier-2">
+            <div class="honeycomb-accordion">
+              <div class="honeycomb-scallop-top"></div>
+              <div class="honeycomb-scallop-bottom"></div>
+            </div>
+            <div class="tier-cutout-banner">
+              <span class="cutout-letter">H</span>
+              <span class="cutout-letter">A</span>
+              <span class="cutout-letter">P</span>
+              <span class="cutout-letter">P</span>
+              <span class="cutout-letter">Y</span>
+            </div>
+          </div>
+
+          <!-- TIER 3 (Top Tier) -->
+          <div class="cake-tier tier-3">
+            <div class="honeycomb-accordion">
+              <div class="honeycomb-scallop-top"></div>
+              <div class="honeycomb-scallop-bottom"></div>
+            </div>
+          </div>
+
+          <!-- Top Candle & Interactive Flame -->
+          <div class="cake-candle-wrapper" id="cake-candle" title="Tap candle to blow it out!">
+            <div class="candle-flame-container" id="candle-flame-container">
+              <div class="candle-flame"></div>
+              <div class="flame-smoke"></div>
+            </div>
+            <div class="candle-wick"></div>
+            <div class="candle-body"></div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom Action Controls -->
+    <div class="cake-bottom-actions">
+      <button class="watch-video-btn" id="cake-video-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+        <span>last puh</span>
+      </button>
+      <div class="cake-instructions-tip">Tap the candle to blow out your wish!</div>
+    </div>
+
+    <!-- Birthday Wish Modal Card (Appears after candle is blown) -->
+    <div class="birthday-wish-card" id="birthday-wish-card">
+      <div class="wish-card-sparkle">✨ 🎂 🎉</div>
+      <h3 class="wish-card-title">May All Your Wishes Come True!</h3>
+      <p class="wish-card-text">
+        "May your days ahead be filled with laughter, bright blessings, and infinite reasons to smile. Happy Birthday, Kaye! I love you so much."
+      </p>
+      <div class="wish-card-buttons">
+        <button class="watch-video-btn" id="watch-video-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <span>last puh</span>
+        </button>
+        <button class="wish-card-close-btn" id="close-wish-btn">Keep Celebrating 💙</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Fullscreen Confetti & Fireworks Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- ========================================================================
+       VIDEO THEATER MODAL (MUJIB.MP4)
+       ======================================================================== -->
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Special Video: last puh">
+    <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+    <div class="video-modal-card">
+      <div class="video-modal-header">
+        <div class="video-header-info">
+          <span class="video-badge">SPECIAL BIRTHDAY VIDEO</span>
+          <h3 class="video-title">last puh 💙</h3>
+        </div>
+        <button class="video-close-btn" id="video-close-btn" aria-label="Close Video">✕</button>
+      </div>
+      <div class="video-frame">
+        <video id="mujib-player" controls playsinline preload="auto">
+          <source src="mujib.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       SCRAPBOOK GALLERY MODAL (All 50 Photos)
+       ======================================================================== -->
+  <div class="gallery-modal" id="gallery-modal" role="dialog" aria-modal="true" aria-label="Our 50 Memory Album">
+    <header class="gallery-modal-header">
+      <div>
+        <h3 class="gallery-modal-title">Our Memory Album</h3>
+        <span class="gallery-modal-count">50 Special Memories with Kaye 💙</span>
+      </div>
+      <button class="gallery-close-btn" id="gallery-close-btn" aria-label="Close Gallery">✕</button>
+    </header>
+    <div class="gallery-scroll-body" id="gallery-grid-container">
+      <!-- Generated dynamically in script.js -->
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       PHOTO LIGHTBOX MODAL
+       ======================================================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Photo Preview">
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightbox-close-btn" aria-label="Close Preview">✕</button>
+      <img src="" id="lightbox-img" class="lightbox-img" alt="Memory Photo Preview">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <div class="lightbox-sub" id="lightbox-sub"></div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Controllers -->
+  <script src="script.js"></script>
+  <script src="cake.js"></script>
+</body>
+</html>
